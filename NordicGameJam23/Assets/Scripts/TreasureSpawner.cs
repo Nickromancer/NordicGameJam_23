@@ -46,6 +46,6 @@ public class TreasureSpawner : MonoBehaviour
     public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawCube(spawnAreaCenter, spawnAreaSize);
+        Gizmos.DrawCube(spawnAreaCenter, spawnAreaSize*2);
     }
 }
