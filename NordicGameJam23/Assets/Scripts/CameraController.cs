@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     private Camera _camera;
+    private List<IClickable> heldItems = new();
 
     private void Start()
     {
@@ -17,15 +19,23 @@ public class CameraController : MonoBehaviour
     {
         Vector2 pos = _camera.ScreenToWorldPoint(Input.mousePosition);
         var hit = Physics2D.Raycast(pos, Vector2.zero);
-        return hit.collider.gameObject.GetComponent<IClickable>();
+        return hit.collider != null ? hit.collider.gameObject.GetComponent<IClickable>() : null;
     }
 
     private void Update()
     {
-        if (InputDown()) 
-            GetClickable()?.OnClick();
+        if (InputDown())
+        {
+            var click = GetClickable();
+            heldItems.Add(click);
+            click.OnClick();
+        }
 
-        if (InputUp()) 
-            GetClickable()?.OnClickUp();
+        if (InputUp())
+        {
+            foreach (var item in heldItems) 
+                item.OnClickUp();
+            heldItems.Clear();
+        }
     }
 }
