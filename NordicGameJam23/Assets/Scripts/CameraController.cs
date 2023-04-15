@@ -26,9 +26,13 @@ public class CameraController : MonoBehaviour
     {
         if (InputDown())
         {
+            GameManager.Instance.totalClicks++;
             var click = GetClickable();
-            heldItems.Add(click);
-            click.OnClick();
+            if (click != null)
+            {
+                heldItems.Add(click);
+                click.OnClick();
+            }
         }
 
         if (InputUp())
