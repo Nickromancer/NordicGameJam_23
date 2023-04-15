@@ -7,8 +7,8 @@ public class TreasureSpawner : MonoBehaviour
 {
     public Vector2 spawnAreaCenter = new(0, 6.5f);
     public Vector2 spawnAreaSize = new(17.5f, 2);
-
     public float meanTimeToSpawn;
+    public float minSpawnDelay;
     public List<GameObject> items;
     public bool active = false;
 
@@ -16,12 +16,20 @@ public class TreasureSpawner : MonoBehaviour
     private float _chancePerTick =>
         (float)(1.0 - Math.Pow(Math.E, Math.Log(0.5, Math.E) / (meanTimeToSpawn * (1.0 / Time.fixedDeltaTime))));
 
+    private float spawnDelay = 0f;
+
     private void FixedUpdate()
     {
         if (!active) return;
         if (!(Random.Range(0f, 1f) < _chancePerTick)) return;
 
-        SpawnObject();
+        if (spawnDelay <= 0)
+        {
+            SpawnObject();
+            spawnDelay = minSpawnDelay;
+        }
+        else
+            spawnDelay -= Time.fixedDeltaTime;
     }
 
     private void SpawnObject()
