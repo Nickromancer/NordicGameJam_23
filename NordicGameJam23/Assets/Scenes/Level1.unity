@@ -444,7 +444,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -613,7 +613,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5419,7 +5419,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.019716024, y: -0.021105409}
+  m_Offset: {x: 0.019716024, y: 1.2749903}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5430,7 +5430,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.1264586, y: 3.8114145}
+  m_Size: {x: 3.1264586, y: 1.0942986}
   m_EdgeRadius: 0
 --- !u!114 &1119057591
 MonoBehaviour:
@@ -5504,11 +5504,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnAreaCenter: {x: 0, y: 6.5}
-  spawnAreaSize: {x: 8.67, y: 2}
-  meanTimeToSpawn: 1
+  spawnAreaSize: {x: 8.67, y: 1}
+  meanTimeToSpawn: 0
   minSpawnDelay: 0
   items:
   - {fileID: 7789219750844358000, guid: 6332002b18ab8da408625acf56cc27d6, type: 3}
+  weights: 01000000
   active: 1
 --- !u!1 &1913975316
 GameObject:
@@ -5627,7 +5628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913975316}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.014131279, y: -4.076874, z: 0}
+  m_LocalPosition: {x: -0.01, y: -4.89, z: 0}
   m_LocalScale: {x: 13.184484, y: 0.70656395, z: 0.70656395}
   m_ConstrainProportionsScale: 0
   m_Children: []
