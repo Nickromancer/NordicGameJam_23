@@ -22,12 +22,13 @@ public class LandscapePan : MonoBehaviour
     {
         if (gameObject.name == "RightColum")
         {
-            Debug.Log("Hello");
+            Debug.Log("Hello right");
             cam.transform.position += new Vector3(panSpeed * Time.deltaTime, 0, 0);
         }
         if (gameObject.name == "LeftColum")
         {
-            cam.transform.position += new Vector3(-panSpeed * Time.deltaTime, 0, 0);
+            Debug.Log("Hello left");
+            cam.transform.position -= new Vector3(panSpeed * Time.deltaTime, 0, 0);
         }
     }
 }
