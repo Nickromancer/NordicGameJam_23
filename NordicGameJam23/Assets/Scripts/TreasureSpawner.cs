@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,13 +11,30 @@ public class TreasureSpawner : MonoBehaviour
     public float meanTimeToSpawn;
     public float minSpawnDelay;
     public List<GameObject> items;
+    public List<int> weights;
     public bool active = false;
 
+    private int _summedweights
+    {
+        get
+        {
+            var s = 0;
+            for (var i = 0; i < items.Count; i++) 
+                s += weights[i];
+            return s;
+        }
+    }
     private int _spawnedObjects = 0;
     private float _chancePerTick =>
         (float)(1.0 - Math.Pow(Math.E, Math.Log(0.5, Math.E) / (meanTimeToSpawn * (1.0 / Time.fixedDeltaTime))));
 
     private float spawnDelay = 0f;
+
+    private void Start()
+    {
+        for (int i = weights.Count; i < items.Count; i++)
+            weights.Add(1);
+    }
 
     private void FixedUpdate()
     {
@@ -34,7 +52,15 @@ public class TreasureSpawner : MonoBehaviour
 
     private void SpawnObject()
     {
-        var obj = items[Random.Range(0, items.Count)];
+        var w = Random.Range(0, _summedweights - 1);
+        var i = 0;
+        for (; i < items.Count; i++)
+        {
+            w -= weights[i];
+            if (w < 0)
+                break;
+        }
+        var obj = items[i];
         var inst = GameObject.Instantiate(obj, transform);
         inst.transform.position = GetRandomPosition();
     }
