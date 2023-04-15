@@ -5,6 +5,27 @@ public class LandscapePan : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 {
     [SerializeField] Camera cam;
     [SerializeField] float panSpeed = 5f;
+    // [SerializeField] float maxPan = 10f;
+    [SerializeField] GameObject landscape;
+    float minX;
+    float maxX;
+
+    private void Awake()
+    {
+        CalculateBounds();
+    }
+
+    private void CalculateBounds()
+    {
+        Renderer landscapeRenderer = landscape.GetComponent<Renderer>();
+        float landscapeHalfWidth = landscapeRenderer.bounds.size.x / 2;
+        float cameraHalfWidth = cam.orthographicSize * cam.aspect;
+
+        minX = -landscapeHalfWidth + cameraHalfWidth;
+        maxX = landscapeHalfWidth - cameraHalfWidth;
+    }
+
+
 
     private bool isMouseOver = false;
 
@@ -29,15 +50,19 @@ public class LandscapePan : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     private void PanCam()
     {
+        Vector3 targetPosition = cam.transform.position;
+
         if (gameObject.name == "RightColum")
         {
-            Debug.Log("Hello right");
-            cam.transform.position += new Vector3(panSpeed * Time.deltaTime, 0, 0);
+            targetPosition.x += panSpeed * Time.deltaTime;
         }
         if (gameObject.name == "LeftColum")
         {
-            Debug.Log("Hello left");
-            cam.transform.position -= new Vector3(panSpeed * Time.deltaTime, 0, 0);
+            targetPosition.x -= panSpeed * Time.deltaTime;
         }
+
+        targetPosition.x = Mathf.Clamp(targetPosition.x, minX, maxX);
+        cam.transform.position = targetPosition;
     }
+
 }
