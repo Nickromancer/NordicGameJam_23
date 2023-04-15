@@ -24,3 +24,7 @@
 
 # macOS-specific files
 .DS_Store
+
+# IDE files
+.idea
+.vsconfig
