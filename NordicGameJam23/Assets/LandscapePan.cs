@@ -1,21 +1,30 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class LandscapePan : MonoBehaviour
+
+public class LandscapePan : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] Camera cam;
-    [SerializeField] float panSpeed = 1f;
-    private void Update() 
+    [SerializeField] float panSpeed = 5f;
+
+    private bool isMouseOver = false;
+
+    private void Update()
     {
-        if (IsMouseOverUI())
+        if (isMouseOver)
         {
             Debug.Log("Hovering");
             PanCam();
-        } 
+        }
     }
 
-    private bool IsMouseOverUI() 
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        return EventSystem.current.IsPointerOverGameObject();
+        isMouseOver = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        isMouseOver = false;
     }
 
     private void PanCam()
