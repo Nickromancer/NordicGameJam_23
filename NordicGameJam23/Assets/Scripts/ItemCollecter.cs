@@ -14,13 +14,13 @@ public class ItemCollecter : MonoBehaviour
     {
         points += p;
         Debug.Log("Points: " + points);
-        scoreCounter.text = "Points: " + points;
+        scoreCounter.text = ""+points;
 
         if (points >= point_goal)
         {
             // TODO: Show win screen
             Debug.Log("You win!");
-            // SceneManager.LoadScene("WinMenu");
+            SceneManager.LoadScene("Level2");
         }
     }
 
@@ -30,11 +30,11 @@ public class ItemCollecter : MonoBehaviour
         Debug.Log("Lives: " + lives);
         if (lives > 0)
         {
-            lifeCounter.text = "Lives: " + lives;
+            lifeCounter.text = ""+lives;
         }
         else
         {
-            lifeCounter.text = "Lives: 0";
+            lifeCounter.text = "0";
             GameOver();
         }
     }

@@ -12,6 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: ec1b7a2ed265e47459a347f5259fe734
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: ffc0c99be0bded94886ea2f9e3995e1e
+  - enabled: 1
+    path: Assets/Scenes/EntranceToBird.unity
+    guid: 0fdc506f4c33b7f468bf5b70a4bee52f
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: e045799bacebaf44fbb0827a808cbf0d
+  - enabled: 1
     path: Assets/Scenes/EndMenu.unity
     guid: e7f56fc499146ac4ca71baea1c8ca487
   m_configObjects: {}
