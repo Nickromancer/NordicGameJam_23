@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 4460663685705572874, guid: 35269526ff7109f49bd41382db2a130c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 379095872}
+      objectReference: {fileID: 357627577}
     - target: {fileID: 4460663685705572874, guid: 35269526ff7109f49bd41382db2a130c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisplayNextSentence
@@ -335,12 +335,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!95 &358203662 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4460663686590348437, guid: 35269526ff7109f49bd41382db2a130c, type: 3}
-  m_PrefabInstance: {fileID: 177491209}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &379095872 stripped
+--- !u!114 &357627577 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3077971512976782682, guid: 9952156c43f38874296d064327ea4a7f, type: 3}
   m_PrefabInstance: {fileID: 1460916639}
@@ -349,17 +344,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3281b8a81c419b448da81527463db16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &606092007 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4460663685760118366, guid: 35269526ff7109f49bd41382db2a130c, type: 3}
-  m_PrefabInstance: {fileID: 177491209}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1130114663
@@ -547,11 +531,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6593136351544770290, guid: 8f917aca07cc112419db034fa56c4460, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: 'After many hardships, you finally find Caladrius. '
+      value: You bring Caladrius home.
       objectReference: {fileID: 0}
     - target: {fileID: 6593136351544770290, guid: 8f917aca07cc112419db034fa56c4460, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: '"Coo coo!"'
+      value: "The colour returns to the child\u2019s cheek as they gaze into the
+        eyes of Caladrius."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f917aca07cc112419db034fa56c4460, type: 3}
@@ -614,21 +599,32 @@ PrefabInstance:
     - target: {fileID: 3077971512976782682, guid: 9952156c43f38874296d064327ea4a7f, type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 358203662}
+      objectReference: {fileID: 2146124202}
     - target: {fileID: 3077971512976782682, guid: 9952156c43f38874296d064327ea4a7f, type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 2141902535}
+      objectReference: {fileID: 2104916675}
     - target: {fileID: 3077971512976782682, guid: 9952156c43f38874296d064327ea4a7f, type: 3}
       propertyPath: dialogueText
       value: 
-      objectReference: {fileID: 606092007}
+      objectReference: {fileID: 1488297593}
     - target: {fileID: 3077971512976782683, guid: 9952156c43f38874296d064327ea4a7f, type: 3}
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9952156c43f38874296d064327ea4a7f, type: 3}
+--- !u!114 &1488297593 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4460663685760118366, guid: 35269526ff7109f49bd41382db2a130c, type: 3}
+  m_PrefabInstance: {fileID: 177491209}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1569185778
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +751,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4b5579afb2ca09a4cbe57d219b67e45b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19ad1cd187ae97e4c8780e3b2840a7f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -781,7 +777,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2141902535 stripped
+--- !u!114 &2104916675 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4460663686849493394, guid: 35269526ff7109f49bd41382db2a130c, type: 3}
   m_PrefabInstance: {fileID: 177491209}
@@ -792,3 +788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2146124202 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4460663686590348437, guid: 35269526ff7109f49bd41382db2a130c, type: 3}
+  m_PrefabInstance: {fileID: 177491209}
+  m_PrefabAsset: {fileID: 0}

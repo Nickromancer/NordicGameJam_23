@@ -20,7 +20,7 @@ public class ItemCollecter : MonoBehaviour
         {
             // TODO: Show win screen
             Debug.Log("You win!");
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
