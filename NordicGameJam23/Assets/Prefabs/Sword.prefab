@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5855579552719780004}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Skull
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7789219750844358000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.98, y: 2.7485867, z: -10.63397}
-  m_LocalScale: {x: 0.26792204, y: 0.26792204, z: 0.26792204}
+  m_LocalScale: {x: 0.4360967, y: 0.4360967, z: 0.4360967}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
