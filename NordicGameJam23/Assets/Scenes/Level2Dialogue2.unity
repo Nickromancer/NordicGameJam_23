@@ -483,7 +483,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8c4042f22bce1d4088862feafeb1c7b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5eaa84b7e24bb004b94cdac92b1f82f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -502,8 +502,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975243008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1.4153, y: 1.4153, z: 1.4153}
+  m_LocalPosition: {x: 0.0009, y: 0.0025, z: 1}
+  m_LocalScale: {x: 0.9258077, y: 0.9268161, z: 1.1742744}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -606,35 +606,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6593136351544770290, guid: 8f917aca07cc112419db034fa56c4460, type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6593136351544770290, guid: 8f917aca07cc112419db034fa56c4460, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: As you venture deeper into the forest, you reach a clearing where a
-        large scaly dragon lies on a pile of diamonds and jewels.
+      value: The woman looks startled by your presence.
       objectReference: {fileID: 0}
     - target: {fileID: 6593136351544770290, guid: 8f917aca07cc112419db034fa56c4460, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: The dragon blinks slowly at you, almost reminiscent of a cat.
+      value: "\"A lonely human. I know what it feels like to be lonely too\u2026\""
       objectReference: {fileID: 0}
     - target: {fileID: 6593136351544770290, guid: 8f917aca07cc112419db034fa56c4460, type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
-      value: '"WHO HAS STUMBLED UPON MY DEN? YOU ARE A HUMAN. HUMANS ARE FILTHY THIEVES
-        WITH GREEDY EYES."'
+      value: She glances down.
       objectReference: {fileID: 0}
     - target: {fileID: 6593136351544770290, guid: 8f917aca07cc112419db034fa56c4460, type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
-      value: 'You freeze in the spot having no words escape your mouth.
-
-'
+      value: "\"I know what you\u2019re searching for\u2026 I will help you if you
+        help me.\""
       objectReference: {fileID: 0}
     - target: {fileID: 6593136351544770290, guid: 8f917aca07cc112419db034fa56c4460, type: 3}
       propertyPath: dialogue.sentences.Array.data[4]
-      value: '"FORTUNATELY FOR YOU, I HAVE ALREADY EATEN."'
+      value: You nod.
       objectReference: {fileID: 0}
     - target: {fileID: 6593136351544770290, guid: 8f917aca07cc112419db034fa56c4460, type: 3}
       propertyPath: dialogue.sentences.Array.data[5]
-      value: You sigh with relief.
+      value: '"Hmm? Who approaches me?"'
       objectReference: {fileID: 0}
     - target: {fileID: 6593136351544770290, guid: 8f917aca07cc112419db034fa56c4460, type: 3}
       propertyPath: dialogue.sentences.Array.data[6]
