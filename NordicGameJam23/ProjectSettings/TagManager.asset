@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Skull
   - Treasure
+  - Sword
   layers:
   - Default
   - TransparentFX

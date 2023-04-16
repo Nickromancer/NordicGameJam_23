@@ -19,12 +19,11 @@ public class TreasureSpawner : MonoBehaviour
         get
         {
             var s = 0;
-            for (var i = 0; i < items.Count; i++) 
+            for (var i = 0; i < items.Count; i++)
                 s += weights[i];
             return s;
         }
     }
-    private int _spawnedObjects = 0;
     private float _chancePerTick =>
         (float)(1.0 - Math.Pow(Math.E, Math.Log(0.5, Math.E) / (meanTimeToSpawn * (1.0 / Time.fixedDeltaTime))));
 
@@ -52,7 +51,7 @@ public class TreasureSpawner : MonoBehaviour
 
     private void SpawnObject()
     {
-        var w = Random.Range(0, _summedweights - 1);
+        var w = Random.Range(0, _summedweights);
         var i = 0;
         for (; i < items.Count; i++)
         {
@@ -72,6 +71,6 @@ public class TreasureSpawner : MonoBehaviour
     public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawCube(spawnAreaCenter, spawnAreaSize*2);
+        Gizmos.DrawCube(spawnAreaCenter, spawnAreaSize * 2);
     }
 }

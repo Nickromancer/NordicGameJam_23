@@ -10,11 +10,18 @@ public class ItemCollecter : MonoBehaviour
 
     [SerializeField] int point_goal = 30;
 
+    [SerializeField] AudioSource audioSource;
+
+    [SerializeField] AudioClip treasureSound;
+    [SerializeField] AudioClip skullSound;
+    [SerializeField] AudioClip swordSound;
+
+
     private void addPoints(int p)
     {
         points += p;
         Debug.Log("Points: " + points);
-        scoreCounter.text = ""+points;
+        scoreCounter.text = "" + points;
 
         if (points >= point_goal)
         {
@@ -30,7 +37,7 @@ public class ItemCollecter : MonoBehaviour
         Debug.Log("Lives: " + lives);
         if (lives > 0)
         {
-            lifeCounter.text = ""+lives;
+            lifeCounter.text = "" + lives;
         }
         else
         {
@@ -45,19 +52,33 @@ public class ItemCollecter : MonoBehaviour
         SceneManager.LoadScene("EndMenu");
     }
 
+    private void PlayCollectSound(AudioClip clip)
+    {
+        if (audioSource && clip)
+        {
+            audioSource.PlayOneShot(clip);
+        }
+    }
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Switch case version:
         switch (other.gameObject.tag)
         {
             case "Treasure":
                 Destroy(other.gameObject);
                 addPoints(1);
+                PlayCollectSound(treasureSound); // Update this line
                 break;
             case "Skull":
+                Destroy(other.gameObject);
+                subtractLives(1);
+                PlayCollectSound(skullSound); // Update this line
+                break;
             case "Sword":
                 Destroy(other.gameObject);
                 subtractLives(1);
+                PlayCollectSound(swordSound); // Update this line
                 break;
         }
     }
